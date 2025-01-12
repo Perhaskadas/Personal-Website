@@ -5,7 +5,7 @@
 const images = [
     "assets/img/bauss.png",
     "assets/img/placeholder1.png",
-    "assets/img/placeholder2.png"
+    "assets/img/placeholder2.jpg"
 ];
 
 // Current image index
