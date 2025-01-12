@@ -3,7 +3,7 @@
 // MAKE IT SLIDE BETWEEN EACH IMAGE
 // MAKE IT SO THAT CHANGING THE IMAGE DOESN'T MAKE THE PAGE JUMP
 const images = [
-    "assets/img/bauss.png",
+    "assets/img/Bauss.png",
     "assets/img/placeholder1.png",
     "assets/img/placeholder2.jpg"
 ];
