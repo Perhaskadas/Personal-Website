@@ -1,0 +1,414 @@
+:root {
+  --main-bg-color: #edd4a6; /* Light beige */
+  --second-bg-color: #f4e3c3; /* Soft cream */
+  --heading-color: #3b2b16; /* Dark brown for contrast */
+  --main-text-color: #3b2b16; /* Match heading for consistency */
+  --selection-color: #d1b079; /* Slightly darker beige for selection */
+  --scroll-color: #edd4a6; /* Match main background */
+  --arrow-color: #3b2b16; /* Match heading and text color */
+  --link-color: #3b2b16; /* Match text color */
+  --border-color: #ceb68d; /* Border matching the beige theme */
+  --name-hover: #b57b48; /* Highlight with a warm brown */
+  --name-shadow: #876543; /* Subtle shadow in a darker brown */
+  --border-outline: #a98c67; /* Outline with soft brown */
+  --navbar-box: rgba(59, 43, 22, 0.03); /* Navbar box shadow */
+  --chevron-hover: #ff4500; /* Highlight chevron with orange */
+  --chevron-click: #ff0000;
+}
+
+html{
+  scroll-behavior: smooth;
+  font-size: 17px;
+}
+
+body {
+  font-family: "Instrument Serif" !important;
+  background-color: var(--main-bg-color) !important;
+  transition: all ease 0.2s;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+  transition: all ease 0.2s;
+}
+
+a:hover {
+  color: #4fa5f4;
+}
+
+.links {
+  font-weight: 200;
+  transition: all ease 0.2s;
+}
+
+.links:active {
+  transition: transform 0.1s ease;
+  transform: scale(1.1) !important;
+  opacity: 0.7;
+}
+
+@media (hover: hover) {
+  .links:hover {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+}
+
+::selection {
+  background-color: var(--selection-color);
+  color: var(--main-bg-color);
+}
+
+.btn-check:focus + .btn, .btn:active:focus, .btn:focus, button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.shown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.text-block {
+  padding: 2rem;
+  color: var(--main-text-color) !important;
+  transition: all ease 0.2s;
+}
+
+#frontpage {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-image: url("../../assets/img/blank.svg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#frontpage-content {
+  text-align: center;
+  margin-top: clamp(0rem, 5vw, 10rem);
+}
+
+section:nth-last-of-type(odd) {
+  background-color: var(--second-bg-color) !important;
+}
+
+.content-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 0.2s;
+  /*scroll-snap-align: start;*/
+}
+
+#logo {
+  transform: var(--logo-transform);
+  max-height: 2.8rem;
+  filter: var(--logo-filter);
+  transition: all ease 0.5s;
+  margin: 0 0.5rem;
+}
+
+@media (hover: hover) {
+  #logo:hover {
+    opacity: 0.5;
+    transform: var(--logo-transform-hover) !important;
+  }
+}
+
+#fullname {
+  color: var(--heading-color);
+  white-space: normal;
+  perspective: 50px;
+  transition: all ease 0.5s;
+  font-weight: 200;
+  font-size: 2.5rem;
+  text-align: left;
+}
+
+#prename{
+  color: var(--main-text-color);
+  transition: all ease 0.5s;
+  font-weight: 200;
+  font-size: 2rem;
+  text-align: left;
+}
+
+#postname{
+  color: var(--main-text-color);
+  transition: all ease 0.5s;
+  font-weight: 200;
+  font-size: 3rem;
+  text-align: left;
+}
+
+@media (min-width: 300px) {
+  #fullname {
+    font-size: clamp(3.75rem, 17vw, 20rem);
+  }
+}
+
+@media (min-width: 576px) {
+  #fullname {
+    font-size: clamp(9.75rem, 14vw - 0.25rem, 20rem);
+  }
+}
+
+@media (min-width: 768px) {
+  #fullname {
+    font-size: clamp(12.75rem, 15vw - 0.5rem, 20rem);
+  }
+}
+
+@media (min-width: 992px) {
+  #fullname {
+    font-size: 10rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #fullname {
+    font-size: clamp(12.75rem, 10vw, 10rem);
+  }
+}
+
+@media (min-width: 1400px) {
+  #fullname {
+    font-size: 20rem;
+  }
+}
+
+.navbar {
+  margin: 0.5rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+.subheader {
+  font-size: 5rem;
+  font-weight: 300;
+  color: var(--main-text-color);
+  text-align: center;
+  transition: all ease 0.2s;
+}
+
+.navbar-brand {
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 600;
+  color: var(--main-text-color) !important;
+  transition: all ease 0.2s;
+  padding: 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-brand {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.navbar-nav {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.nav-item > a {
+  border-radius: 2px;
+  color: var(--main-text-color) !important;
+  transition: all ease 0.2s;
+}
+
+.navbar-toggler {
+  color: var(--main-text-color) !important;
+  transition: all ease 0.2s;
+  border: 2px solid transparent;
+}
+
+.navbarblur {
+  box-shadow: inset 0px 0px 5px 5000px var(--navbar-box);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all ease 0.2s !important;
+}
+
+@media (min-width: 768px) {
+  .navbarblur {
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+.bottom-chevron {
+  display: inline-flex;
+  animation: bounce 2s infinite 2s;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+.bottom-chevron svg {
+  font-size: 3rem;
+  color: var(--arrow-color);
+}
+
+.bottom-chevron svg:hover {
+  color: var(--chevron-hover);
+}
+
+.bottom-chevron svg:active {
+  color: var(--chevron-click);
+}
+
+#click {
+  max-height: 6rem;
+  transition: all ease 0.2s;
+  filter: var(--click-img-filter);
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, .9) translateY(0);
+  }
+  30% {
+    transform: scale(.9, 1.1) translateY(-10px);
+  }
+  50% {
+    transform: scale(1.05, .95) translateY(0);
+  }
+  65% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  80% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
+footer {
+  transition: all ease 0.2s;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-body {
+  z-index: 100 !important;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.image-carousel {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow {
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--arrow-color);
+}
+
+.left-arrow {
+  left: 10%;
+}
+
+.right-arrow {
+  right: 10%;
+}
+
+.carousel-arrow:hover {
+  transition: transform 0.3s ease, color 0.3s ease !important;
+  transform: scale(1.15) !important;
+  color: var(--chevron-hover);
+}
+
+.carousel-arrow:active {
+  transition: transform 0.1s ease, color 0.1s ease !important;
+  transform: scale(0.9) !important;
+  color: var(--chevron-click);
+}
+
+.highlight-box {
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+.highlight-item {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--main-text-color); 
+  background-color: var(--second-bg-color);
+  border: 2px solid var(--border-color);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  text-transform: uppercase;
+}
+
+/* Hover Effect: Slightly darker background */
+.highlight-item:hover {
+  background-color: var(--selection-color); /* Darker beige for hover */
+}
+
+.highlight-item::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem; /* Position the underline just below the button */
+  left: 0;
+  width: 0; /* Start with no width */
+  height: 4px; /* Thickness of the underline */
+  background-color: var(--name-hover); /* Retro warm brown for the underline */
+  border-radius: 2px; /* Rounded edges for the underline */
+  transform: scaleX(0.5) translateX(50%); /* Center and shrink it initially */
+  transform-origin: center;
+  transition: width 0.3s ease, left 0.3s ease; /* Smooth animation */
+  z-index: 1; /* Place the underline above the button */
+}
+
+/* Active Button with Full Underline */
+.highlight-item.active::after {
+  width: 80%;
+  transform: scaleX(1) translateX(0);
+}
+
+.hobby-content img {
+  border-radius: 50px;
+  box-shadow: 20px 20px 4px rgba(0, 0, 0, 0.1);
+}
