@@ -328,9 +328,31 @@ footer {
 
 .image-carousel {
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  min-height: 300px; /* A sensible minimum height for smaller images */
+  max-height: 80vh; /* Ensure the carousel doesn't take up too much vertical space */
+  width: 100%; /* Fully responsive */
+}
+
+#image-wrapper {
+  width: 100%; /* Fixed width for the image area */
+  height: 80vh; /* Fixed height for the image area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevent image overflow */
+  border-radius: 40px; /* Optional: Rounded corners for the wrapper */
+}
+
+#carousel-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 40px;
+  
 }
 
 .carousel-arrow {

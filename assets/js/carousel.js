@@ -1,11 +1,7 @@
-// TO DO:
-// FIND ACUTAL IMAGES
-// MAKE IT SLIDE BETWEEN EACH IMAGE
-// MAKE IT SO THAT CHANGING THE IMAGE DOESN'T MAKE THE PAGE JUMP
 const images = [
     "assets/img/Bauss.png",
     "assets/img/placeholder1.png",
-    "assets/img/placeholder2.jpg"
+    "assets/img/rock.png"
 ];
 
 // Current image index
@@ -25,4 +21,3 @@ function previousImage() {
     currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop to the end if at the start
     carouselImage.src = images[currentIndex];
 }
-
