@@ -1,6 +1,6 @@
 const images = [
     "assets/img/Bauss.png",
-    "assets/img/placeholder1.png",
+    "assets/img/palazzo.JPG",
     "assets/img/rock.png"
 ];
 

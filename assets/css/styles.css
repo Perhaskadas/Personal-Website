@@ -278,6 +278,21 @@ section:nth-last-of-type(odd) {
   color: var(--chevron-click);
 }
 
+#about {
+  position: relative; /* Make #about the positioning context for the chevron */
+}
+
+.chevron-wrapper{
+  position: absolute; 
+  bottom: 15vh; /* Distance from the bottom of the section */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for exact centering */
+  display: flex; /* Ensure proper alignment if needed */
+  justify-content: center; /* Center the chevron horizontally */
+  align-items: center; /* Center the chevron vertically if needed */
+  width: 100%; /* Optional: Make it span the section width */
+}
+
 #click {
   max-height: 6rem;
   transition: all ease 0.2s;
@@ -333,7 +348,7 @@ footer {
   justify-content: center;
   overflow: hidden;
   min-height: 300px; /* A sensible minimum height for smaller images */
-  max-height: 80vh; /* Ensure the carousel doesn't take up too much vertical space */
+  max-height: 76vh; /* Ensure the carousel doesn't take up too much vertical space */
   width: 100%; /* Fully responsive */
 }
 
@@ -352,7 +367,6 @@ footer {
   max-height: 100%;
   object-fit: contain;
   border-radius: 40px;
-  
 }
 
 .carousel-arrow {
@@ -413,12 +427,12 @@ footer {
   content: "";
   position: absolute;
   bottom: -0.5rem; /* Position the underline just below the button */
-  left: 0;
+  left: 50%;
   width: 0; /* Start with no width */
   height: 4px; /* Thickness of the underline */
   background-color: var(--name-hover); /* Retro warm brown for the underline */
   border-radius: 2px; /* Rounded edges for the underline */
-  transform: scaleX(0.5) translateX(50%); /* Center and shrink it initially */
+  transform: translateX(-50%) scaleX(0) ; /* Center and shrink it initially */
   transform-origin: center;
   transition: width 0.3s ease, left 0.3s ease; /* Smooth animation */
   z-index: 1; /* Place the underline above the button */
@@ -427,7 +441,7 @@ footer {
 /* Active Button with Full Underline */
 .highlight-item.active::after {
   width: 80%;
-  transform: scaleX(1) translateX(0);
+  transform: translateX(-50%) scaleX(1);
 }
 
 .hobby-content img {
