@@ -4,6 +4,13 @@ const images = [
     "assets/img/rock.png"
 ];
 
+function preloadImages(imageArray) {
+    imageArray.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }
+
 // Current image index
 let currentIndex = 0;
 
@@ -21,3 +28,5 @@ function previousImage() {
     currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop to the end if at the start
     carouselImage.src = images[currentIndex];
 }
+
+window.onload = () => preloadImages(images);
