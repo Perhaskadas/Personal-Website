@@ -2,7 +2,7 @@ const frontpage = $("#frontpage");
 const fullname = document.getElementById("fullname");
 const isTouchDevice = ('ontouchstart' in window || 'onmsgesturechange' in window);
 
-if (!isTouchDevice && frontpage && fullname) {
+if (!isTouchDevice && frontpage.length && fullname) {
 	const xOrigin = frontpage.width() / 2;
 	const yOrigin = frontpage.height() / 2;
 	frontpage.on('mousemove', (e) => {

@@ -24,6 +24,7 @@
     max-height: 100%;
     object-fit: contain;
     border-radius: 40px;
+    transition: opacity 0.2s ease-in-out;
   }
   
   .carousel-arrow {
@@ -33,24 +34,24 @@
     font-size: 3rem;
     cursor: pointer;
     color: var(--arrow-color);
+    transition: transform 0.3s ease, color 0.3s ease !important;
   }
-  
+
   .left-arrow {
     left: 10%;
   }
-  
+
   .right-arrow {
     right: 10%;
   }
-  
+
   .carousel-arrow:hover {
-    transition: transform 0.3s ease, color 0.3s ease !important;
     transform: scale(1.15) !important;
     color: var(--chevron-hover);
   }
-  
+
   .carousel-arrow:active {
-    transition: transform 0.1s ease, color 0.1s ease !important;
+    transition: transform 0.1s ease, color 0.1s ease;
     transform: scale(0.9) !important;
     color: var(--chevron-click);
   }

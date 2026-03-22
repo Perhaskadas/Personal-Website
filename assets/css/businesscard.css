@@ -1,7 +1,7 @@
 /* BUSINESS CARD FROM https://codepen.io/swellfoop/pen/NLyRON THOMAS HANSON */
 @import url(https://fonts.googleapis.com/css?family=Cormorant+Garamond);
 
-.card_wrapper{
+.card-wrapper{
     letter-spacing: 1px;
     overflow: hidden;
 }

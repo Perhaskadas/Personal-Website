@@ -9,6 +9,13 @@ if (window.innerWidth < 768) {
 	});
 }
 
+window.addEventListener('scroll', function() {
+	var navbar = document.querySelector('.navbar');
+	if (navbar) {
+		navbar.classList.toggle('navbarblur', window.scrollY > 10);
+	}
+});
+
 document.addEventListener('DOMContentLoaded', function() {
 	if ('AOS' in window) {
 		AOS.init();

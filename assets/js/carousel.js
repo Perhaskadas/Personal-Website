@@ -1,7 +1,7 @@
 const images = [
-    "assets/img/Bauss.png",
-    "assets/img/Palazzo.JPG",
-    "assets/img/rock.png"
+    "assets/img/Bauss.webp",
+    "assets/img/Palazzo.webp",
+    "assets/img/rock.webp"
 ];
 
 function preloadImages(imageArray) {
@@ -17,16 +17,27 @@ let currentIndex = 0;
 // Image element
 const carouselImage = document.getElementById("carousel-image");
 
+function switchImage(newIndex) {
+    carouselImage.style.transition = 'opacity 0.2s ease-in-out';
+    carouselImage.style.opacity = 0;
+    setTimeout(() => {
+        currentIndex = newIndex;
+        carouselImage.src = images[currentIndex];
+        carouselImage.style.opacity = 1;
+    }, 200);
+}
+
 // Function to show the next image
 function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length; // Loop to the start if at the end
-    carouselImage.src = images[currentIndex];
+    switchImage((currentIndex + 1) % images.length);
 }
 
 // Function to show the previous image
 function previousImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop to the end if at the start
-    carouselImage.src = images[currentIndex];
+    switchImage((currentIndex - 1 + images.length) % images.length);
 }
 
-window.onload = () => preloadImages(images);
+window.addEventListener('load', () => {
+    preloadImages(images);
+    if ('AOS' in window) AOS.refresh();
+});

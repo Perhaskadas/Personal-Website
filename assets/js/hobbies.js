@@ -18,11 +18,8 @@ hobbyButtons.forEach((button) => {
         // Show the corresponding hobby content
         const hobbyId = button.getAttribute("data-hobby");
         const targetContent = document.getElementById(hobbyId);
-        console.log("Clicked button:", button);
-        console.log("Target hobby ID:", hobbyId);
-        console.log("Target content element:", targetContent);
         if (targetContent) {
-            targetContent.style.display = "block";
+            targetContent.style.display = "flex";
         }
     });
 });
